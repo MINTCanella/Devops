@@ -15,4 +15,3 @@ def test_index_route(client):
     assert b"<!DOCTYPE html>" in response.data
     assert b'<button id="get_image"' in response.data
     assert b'<img id="random_image"' in response.data
-
