@@ -13,5 +13,6 @@ def test_index_route(client):
 
     assert response.status_code == 200
     assert b"<!DOCTYPE html>" in response.data
-    assert b'<button id="get_image_btn"' in response.data
+    assert b'<button id="get_image"' in response.data
     assert b'<img id="random_image"' in response.data
+
