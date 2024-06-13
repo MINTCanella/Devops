@@ -1,6 +1,8 @@
 FROM python:3.9
 
-RUN pip install flask
+COPY ./requirements.txt .
+
+RUN pip install -r requirements.txt
 
 COPY app.py ./app.py
 COPY templates ./templates
