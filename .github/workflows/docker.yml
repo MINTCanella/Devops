@@ -1,0 +1,20 @@
+name: docker-container
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Login
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build docker
+      run: |
+        docker build -t mintcanella/dev-test:latest .
+        docker push mintcanella/dev-test:latest
