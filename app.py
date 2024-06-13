@@ -12,7 +12,7 @@ def index():
 
 @app.route("/get_image", methods=["GET"])
 def get_image():
-    image_path = os.path.join(app.root_path, "templates/meme")
+    image_path = os.path.join(app.root_path, "templates/memes")
     image_files = [
         f for f in os.listdir(image_path) if os.path.isfile(os.path.join(image_path, f))
     ]
